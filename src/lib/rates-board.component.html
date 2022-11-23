@@ -1,0 +1,51 @@
+<div class="w-100 border" [ngStyle]="{'background-color':textColor}">
+    <div class="d-flex flex-nowrap">
+        <div [ngStyle]="{'color':themeColor}">
+            CRYPTOS
+        </div>
+        <div [ngStyle]="{'color':themeColor}">
+            TO {{destination}}
+        </div>
+        <div *ngIf="fullDataShow" [ngStyle]="{'color':themeColor}">
+            {{columns[0]}}
+        </div>
+        <div *ngIf="fullDataShow" [ngStyle]="{'color':themeColor}">
+            {{columns[1]}}
+        </div>
+        <div *ngIf="fullDataShow" [ngStyle]="{'color':themeColor}">
+            {{columns[2]}}
+        </div>
+        <div *ngIf="fullDataShow" [ngStyle]="{'color':themeColor}">
+            {{columns[3]}}
+        </div>
+    </div>
+    <div class="d-flex flex-nowrap" *ngFor="let i of array"
+        (click)="routeCrypto(i[0])">
+        <div class="small fw-bold"
+            [ngStyle]="{'color':textColor,'background-color':themeColor}">
+            {{i[0]}}
+        </div>
+        <div class="small fw-bold"
+            [ngStyle]="{'color':i[2],'background-color':themeColor}">
+            {{i[1]}}
+            <i class="fa" [class.fa-arrow-up]="i[2]==='green'"
+                [class.fa-arrow-down]="i[2]==='red'" [ngStyle]="{'color':i[2]}"></i>
+        </div>
+        <div *ngIf="fullDataShow" class="small"
+            [ngStyle]="{'color':'black','background-color':themeColor}">
+            {{i[3]}}
+        </div>
+        <div *ngIf="fullDataShow" class="small"
+            [ngStyle]="{'color':'black','background-color':themeColor}">
+            {{i[4]}}
+        </div>
+        <div *ngIf="fullDataShow" class="small"
+            [ngStyle]="{'color':'black','background-color':themeColor}">
+            {{i[5]}}
+        </div>
+        <div *ngIf="fullDataShow" class="small"
+            [ngStyle]="{'color':'black','background-color':themeColor}">
+            {{i[6]}}
+        </div>
+    </div>
+</div>
